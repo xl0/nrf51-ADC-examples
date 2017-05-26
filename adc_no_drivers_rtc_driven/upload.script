@@ -1,0 +1,24 @@
+si 1
+device nrf51822
+speed 100
+#w4 4001e504 2
+#w4 4001e50c 1
+
+#sleep 
+
+mem 4001e400 4
+
+w4 4001e504 1
+sleep 100
+
+
+mem 4001e400 4
+
+loadfile combined.hex
+
+sleep 100
+
+r
+g
+
+
