@@ -5,7 +5,7 @@ export OUTPUT_FILENAME
 MAKEFILE_NAME := $(MAKEFILE_LIST)
 MAKEFILE_DIR := $(dir $(MAKEFILE_NAME) ) 
 
-TEMPLATE_PATH = ../../../../../components/toolchain/gcc
+TEMPLATE_PATH = ../../../../../../components/toolchain/gcc
 ifeq ($(OS),Windows_NT)
 include $(TEMPLATE_PATH)/Makefile.windows
 else
@@ -37,7 +37,7 @@ remduplicates = $(strip $(if $1,$(firstword $1) $(call remduplicates,$(filter-ou
 
 #source common to all targets
 C_SOURCE_FILES += \
-$(abspath ../../../../../components/libraries/button/app_button.c) \
+$(abspath ../../../../../../components/libraries/button/app_button.c) \
 $(abspath ../../../../../components/libraries/util/app_error.c) \
 $(abspath ../../../../../components/libraries/util/app_error_weak.c) \
 $(abspath ../../../../../components/libraries/timer/app_timer.c) \
@@ -54,23 +54,23 @@ $(abspath ../../../../../components/toolchain/system_nrf51.c) \
 ASM_SOURCE_FILES  = $(abspath ../../../../../components/toolchain/gcc/gcc_startup_nrf51.s)
 
 #includes common to all targets
-INC_PATHS  = -I$(abspath ../../config/template_pca10028)
-INC_PATHS += -I$(abspath ../../config)
-INC_PATHS += -I$(abspath ../../../../bsp)
-INC_PATHS += -I$(abspath ../../../../../components/drivers_nrf/nrf_soc_nosd)
-INC_PATHS += -I$(abspath ../../../../../components/device)
-INC_PATHS += -I$(abspath ../../../../../components/drivers_nrf/hal)
-INC_PATHS += -I$(abspath ../../../../../components/libraries/button)
-INC_PATHS += -I$(abspath ../../../../../components/drivers_nrf/delay)
-INC_PATHS += -I$(abspath ../../../../../components/toolchain/CMSIS/Include)
-INC_PATHS += -I$(abspath ../..)
-INC_PATHS += -I$(abspath ../../../../../components/libraries/util)
-INC_PATHS += -I$(abspath ../../../../../components/drivers_nrf/common)
-INC_PATHS += -I$(abspath ../../../../../components/toolchain)
-INC_PATHS += -I$(abspath ../../../../../components/libraries/timer)
-INC_PATHS += -I$(abspath ../../../../../components/drivers_nrf/config)
-INC_PATHS += -I$(abspath ../../../../../components/drivers_nrf/gpiote)
-INC_PATHS += -I$(abspath ../../../../../components/toolchain/gcc)
+INC_PATHS  = -I$(abspath ../../../config/template_pca10028)
+INC_PATHS += -I$(abspath ../../../config)
+INC_PATHS += -I$(abspath ../../../../../bsp)
+INC_PATHS += -I$(abspath ../../../../../../components/drivers_nrf/nrf_soc_nosd)
+INC_PATHS += -I$(abspath ../../../../../../components/device)
+INC_PATHS += -I$(abspath ../../../../../../components/drivers_nrf/hal)
+INC_PATHS += -I$(abspath ../../../../../../components/libraries/button)
+INC_PATHS += -I$(abspath ../../../../../../components/drivers_nrf/delay)
+INC_PATHS += -I$(abspath ../../../../../../components/toolchain/CMSIS/Include)
+INC_PATHS += -I$(abspath ../../..)
+INC_PATHS += -I$(abspath ../../../../../../components/libraries/util)
+INC_PATHS += -I$(abspath ../../../../../../components/drivers_nrf/common)
+INC_PATHS += -I$(abspath ../../../../../../components/toolchain)
+INC_PATHS += -I$(abspath ../../../../../../components/libraries/timer)
+INC_PATHS += -I$(abspath ../../../../../../components/drivers_nrf/config)
+INC_PATHS += -I$(abspath ../../../../../../components/drivers_nrf/gpiote)
+INC_PATHS += -I$(abspath ../../../../../../components/toolchain/gcc)
 
 OBJECT_DIRECTORY = _build
 LISTING_DIRECTORY = $(OBJECT_DIRECTORY)
